@@ -44,6 +44,18 @@ void gpio_PB_config(void);
 */
 bool gpio_PB_read(void);
 
+
+/*
+// @brief PB GPIO Configuration
+*/
+void gpio_SW_config(void);
+
+/*
+// @brief PB GPIO read pin
+*/
+bool gpio_SW_1_read(void);
+bool gpio_SW_2_read(void);
+
 //-----------------------------------------------------------------------//
 #endif
 //-----------------------------------------------------------------------//

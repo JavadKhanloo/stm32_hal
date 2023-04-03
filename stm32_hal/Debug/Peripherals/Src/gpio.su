@@ -5,3 +5,6 @@
 ../Peripherals/Src/gpio.c:57:6:gpio_LED_toggle_red	8	static
 ../Peripherals/Src/gpio.c:66:6:gpio_PB_config	32	static
 ../Peripherals/Src/gpio.c:83:6:gpio_PB_read	8	static
+../Peripherals/Src/gpio.c:92:6:gpio_SW_config	40	static
+../Peripherals/Src/gpio.c:114:6:gpio_SW_1_read	8	static
+../Peripherals/Src/gpio.c:119:6:gpio_SW_2_read	8	static

@@ -85,4 +85,40 @@ bool gpio_PB_read(void)
 	return (bool)HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
 }
 
+
+/*
+// @brief PB GPIO Configuration
+*/
+void gpio_SW_config(void)
+{
+	// sw-1 PA8
+	// sw-2 PA15
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	GPIO_InitTypeDef gpio_init_struct = {0};
+	gpio_init_struct.Mode = GPIO_MODE_INPUT;
+	gpio_init_struct.Pin = GPIO_PIN_8 | GPIO_PIN_15;
+	gpio_init_struct.Pull = GPIO_NOPULL;
+	gpio_init_struct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOA, &gpio_init_struct);
+
+	// remap
+	__HAL_RCC_AFIO_CLK_ENABLE();
+	__HAL_AFIO_REMAP_SWJ_DISABLE();
+}
+
+/*
+// @brief PB GPIO read pin
+*/
+bool gpio_SW_1_read(void)
+{
+	return (bool)HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15);
+}
+
+bool gpio_SW_2_read(void)
+{
+	return (bool)HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8);
+}
+
 //-----------------------------------------------------------------------//

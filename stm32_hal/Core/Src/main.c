@@ -38,17 +38,14 @@ int main()
 //  HAL_Delay(2000);
   // pb
   gpio_PB_config();
-  printf("program is starting...\r\n");
-//  int counter = 0;
+
+  //sw
+  gpio_SW_config();
 
   while (1)
   {
-//    printf("counter : %d\r\n", counter++);
-//    gpio_LED_toggle_green();
-//    HAL_Delay(250);
-//    gpio_LED_toggle_red();
-//    HAL_Delay(250);
-	  gpio_LED_write_green(gpio_PB_read());
+	  gpio_LED_write_green(gpio_SW_1_read());
+	  gpio_LED_write_red(gpio_SW_2_read());
   }
 }
 
