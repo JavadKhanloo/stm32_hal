@@ -34,6 +34,16 @@ void gpio_LED_write_red(bool state);
 void gpio_LED_toggle_green(void);
 void gpio_LED_toggle_red(void);
 
+/*
+// @brief PB GPIO Configuration
+*/
+void gpio_PB_config(void);
+
+/*
+// @brief PB GPIO read pin
+*/
+bool gpio_PB_read(void);
+
 //-----------------------------------------------------------------------//
 #endif
 //-----------------------------------------------------------------------//

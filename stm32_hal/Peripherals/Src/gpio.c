@@ -59,4 +59,30 @@ void gpio_LED_toggle_red(void)
 	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
 }
 
+
+/*
+// @brief PB GPIO Configuration
+*/
+void gpio_PB_config(void)
+{
+	// user button PA0
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	GPIO_InitTypeDef gpio_init_struct = {0};
+	gpio_init_struct.Mode = GPIO_MODE_INPUT;
+	gpio_init_struct.Pin = GPIO_PIN_0;
+	gpio_init_struct.Pull = GPIO_NOPULL;
+	gpio_init_struct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOA, &gpio_init_struct);
+
+}
+
+/*
+// @brief PB GPIO read pin
+*/
+bool gpio_PB_read(void)
+{
+	return (bool)HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+}
+
 //-----------------------------------------------------------------------//

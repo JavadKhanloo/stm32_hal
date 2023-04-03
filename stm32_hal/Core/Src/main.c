@@ -33,19 +33,22 @@ int main()
 
   // led
   gpio_LED_config();
-  gpio_LED_write_green(true);
-  gpio_LED_write_red(true);
-  HAL_Delay(2000);
+//  gpio_LED_write_green(true);
+//  gpio_LED_write_red(true);
+//  HAL_Delay(2000);
+  // pb
+  gpio_PB_config();
   printf("program is starting...\r\n");
-  int counter = 0;
+//  int counter = 0;
 
   while (1)
   {
-    printf("counter : %d\r\n", counter++);
-    gpio_LED_toggle_green();
-    HAL_Delay(250);
-    gpio_LED_toggle_red();
-    HAL_Delay(250);
+//    printf("counter : %d\r\n", counter++);
+//    gpio_LED_toggle_green();
+//    HAL_Delay(250);
+//    gpio_LED_toggle_red();
+//    HAL_Delay(250);
+	  gpio_LED_write_green(gpio_PB_read());
   }
 }
 
