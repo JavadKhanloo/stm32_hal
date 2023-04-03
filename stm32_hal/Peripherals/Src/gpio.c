@@ -121,4 +121,20 @@ bool gpio_SW_2_read(void)
 	return (bool)HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8);
 }
 
+
+/*
+// @brief tm1637 GPIO Configuration
+*/
+void gpio_tm1637_config(void)
+{
+	__HAL_RCC_GPIOB_CLK_ENABLE();
+	GPIO_InitTypeDef gpio_init_struct = {0};
+	gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;
+	gpio_init_struct.Pin = GPIO_PIN_10 | GPIO_PIN_11;
+	gpio_init_struct.Pull = GPIO_NOPULL;
+	gpio_init_struct.Speed = GPIO_SPEED_FREQ_LOW;
+
+	HAL_GPIO_Init(GPIOB, &gpio_init_struct);
+}
+
 //-----------------------------------------------------------------------//

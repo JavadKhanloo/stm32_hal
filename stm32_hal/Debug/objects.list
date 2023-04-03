@@ -1,3 +1,4 @@
+"./Application/Display/tm1637.o"
 "./Core/Src/main.o"
 "./Core/Src/printf_redirect.o"
 "./Core/Src/stm32f1xx_it.o"

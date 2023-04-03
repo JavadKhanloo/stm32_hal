@@ -56,6 +56,12 @@ void gpio_SW_config(void);
 bool gpio_SW_1_read(void);
 bool gpio_SW_2_read(void);
 
+
+/*
+// @brief tm1637 GPIO Configuration
+*/
+void gpio_tm1637_config(void);
+
 //-----------------------------------------------------------------------//
 #endif
 //-----------------------------------------------------------------------//

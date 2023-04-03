@@ -16,6 +16,7 @@
 #include "rcc.h"
 #include "uart.h"
 #include "gpio.h"
+#include "tm1637.h"
 //-----------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------//
@@ -42,10 +43,23 @@ int main()
   //sw
   gpio_SW_config();
 
+  // tm1637 display
+  gpio_tm1637_config();
+  tm1637_init(GPIOB, GPIO_PIN_10, GPIO_PIN_11);
+
+  tm1637_setCounter(1);
+  HAL_Delay(2000);
+  tm1637_setCounter(12);
+  HAL_Delay(2000);
+  tm1637_setCounter(123);
+  HAL_Delay(2000);
+  tm1637_setCounter(1234);
+  HAL_Delay(2000);
+
+  tm1637_setClock(1, 20);
   while (1)
   {
-	  gpio_LED_write_green(gpio_SW_1_read());
-	  gpio_LED_write_red(gpio_SW_2_read());
+
   }
 }
 

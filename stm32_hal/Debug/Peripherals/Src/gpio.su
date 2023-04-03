@@ -8,3 +8,4 @@
 ../Peripherals/Src/gpio.c:92:6:gpio_SW_config	40	static
 ../Peripherals/Src/gpio.c:114:6:gpio_SW_1_read	8	static
 ../Peripherals/Src/gpio.c:119:6:gpio_SW_2_read	8	static
+../Peripherals/Src/gpio.c:128:6:gpio_tm1637_config	32	static
