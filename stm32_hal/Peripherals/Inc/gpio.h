@@ -10,43 +10,30 @@
 //-----------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------//
-// header section                                                        //
+// header gaurd                                                          //
 //-----------------------------------------------------------------------//
+#ifndef _GPIO_H_
+#define _GPIO_H_
+
 #include "main.h"
-#include "rcc.h"
-#include "uart.h"
-#include "gpio.h"
-//-----------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------//
-// main function                                                         //
+// function definition                                                   //
 //-----------------------------------------------------------------------//
-int main()
-{
-  HAL_Init();
-  // clock
-  rcc_system_clock_config();
 
-  // uart
-  uart_UART1_GPIO_config();
-  uart_UART1_config();
+/*
+// @brief LED GPIO Configuration
+*/
+void gpio_LED_config(void);
 
-  // led
-  gpio_LED_config();
-  gpio_LED_write_green(true);
-  gpio_LED_write_red(true);
-  HAL_Delay(2000);
-  printf("program is starting...\r\n");
-  int counter = 0;
+/*
+// @brief LED write/toggle (Green/Red)
+*/
+void gpio_LED_write_green(bool state);
+void gpio_LED_write_red(bool state);
+void gpio_LED_toggle_green(void);
+void gpio_LED_toggle_red(void);
 
-  while (1)
-  {
-    printf("counter : %d\r\n", counter++);
-    gpio_LED_toggle_green();
-    HAL_Delay(250);
-    gpio_LED_toggle_red();
-    HAL_Delay(250);
-  }
-}
-
+//-----------------------------------------------------------------------//
+#endif
 //-----------------------------------------------------------------------//

@@ -12,41 +12,51 @@
 //-----------------------------------------------------------------------//
 // header section                                                        //
 //-----------------------------------------------------------------------//
-#include "main.h"
-#include "rcc.h"
-#include "uart.h"
 #include "gpio.h"
+
 //-----------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------//
-// main function                                                         //
+// function definition                                                   //
 //-----------------------------------------------------------------------//
-int main()
+
+/*
+// @brief LED GPIO Configuration
+*/
+void gpio_LED_config(void)
 {
-  HAL_Init();
-  // clock
-  rcc_system_clock_config();
+	// green LED => PB13
+	// red   LED => PB14
 
-  // uart
-  uart_UART1_GPIO_config();
-  uart_UART1_config();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  // led
-  gpio_LED_config();
-  gpio_LED_write_green(true);
-  gpio_LED_write_red(true);
-  HAL_Delay(2000);
-  printf("program is starting...\r\n");
-  int counter = 0;
+  GPIO_InitTypeDef gpio_init_struct = {0};
+  gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;
+  gpio_init_struct.Pin = GPIO_PIN_13 | GPIO_PIN_14;
+  gpio_init_struct.Pull = GPIO_NOPULL;
+  gpio_init_struct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &gpio_init_struct);
 
-  while (1)
-  {
-    printf("counter : %d\r\n", counter++);
-    gpio_LED_toggle_green();
-    HAL_Delay(250);
-    gpio_LED_toggle_red();
-    HAL_Delay(250);
-  }
+}
+
+/*
+// @brief LED write/toggle (Green/Red)
+*/
+void gpio_LED_write_green(bool state)
+{
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, (GPIO_PinState)state);
+}
+void gpio_LED_write_red(bool state)
+{
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, (GPIO_PinState)state);
+}
+void gpio_LED_toggle_green(void)
+{
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
+}
+void gpio_LED_toggle_red(void)
+{
+	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
 }
 
 //-----------------------------------------------------------------------//
