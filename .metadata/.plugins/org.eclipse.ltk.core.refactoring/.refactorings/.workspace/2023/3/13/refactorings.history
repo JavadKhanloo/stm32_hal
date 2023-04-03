@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/stm32_hal/Src/syscalls.c" element2="/stm32_hal/Src/sysmem.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1680263218552"/>&#x0A;<refactoring comment="Delete resource &apos;stm32_hal/Startup/startup_stm32f103c8tx.s&apos;" deleteContents="false" description="Delete resource &apos;stm32_hal/Startup/startup_stm32f103c8tx.s&apos;" element1="/stm32_hal/Startup/startup_stm32f103c8tx.s" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1680263265227"/>
+</session>

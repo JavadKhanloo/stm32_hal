@@ -1,0 +1,2 @@
+uart.c:26:6:uart_UART1_GPIO_config	1
+uart.c:52:6:uart_UART1_config	2

@@ -1,0 +1,28 @@
+2023-04-02 19:08:23,512 [INFO] Activator:176 - 
+
+
+2023-04-02 19:08:23,598 [INFO] Activator:177 - !SESSION log4j initialized
+2023-04-02 19:08:48,879 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-04-02 19:09:08,805 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-04-02 19:09:08,807 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-04-02 19:09:08,813 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2023-04-03 07:54:42,110 [INFO] Activator:177 - 
+
+
+2023-04-03 07:54:42,110 [INFO] Activator:178 - !SESSION log4j initialized
+2023-04-03 07:54:47,970 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2023-04-03 07:55:35,435 [INFO] Activator:177 - 
+
+
+2023-04-03 07:55:35,435 [INFO] Activator:178 - !SESSION log4j initialized
+2023-04-03 07:55:39,147 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2023-04-03 07:56:21,040 [INFO] Activator:177 - 
+
+
+2023-04-03 07:56:21,040 [INFO] Activator:178 - !SESSION log4j initialized
+2023-04-03 07:56:24,639 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2023-04-03 07:58:04,078 [INFO] Activator:177 - 
+
+
+2023-04-03 07:58:04,078 [INFO] Activator:178 - !SESSION log4j initialized
+2023-04-03 07:58:06,706 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com

@@ -1,0 +1,17 @@
+08:02:54 **** Incremental Build of configuration Debug for project stm32_hal ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -c -I"D:/Javad/Projects/STM32/stm32_hal/stm32_hal/Core/Inc" -I"D:/Javad/Projects/STM32/stm32_hal/stm32_hal/CMSIS/Include" -I"D:/Javad/Projects/STM32/stm32_hal/stm32_hal/CMSIS/Device" -I"D:/Javad/Projects/STM32/stm32_hal/stm32_hal/Peripherals/Inc" -I"D:/Javad/Projects/STM32/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc" -I"D:/Javad/Projects/STM32/stm32_hal/stm32_hal/HAL" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "stm32_hal.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Javad\Projects\STM32\stm32_hal\stm32_hal\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32_hal.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32_hal.elf
+ 
+arm-none-eabi-size   stm32_hal.elf 
+arm-none-eabi-objdump -h -S  stm32_hal.elf  > "stm32_hal.list"
+arm-none-eabi-objcopy  -O ihex  stm32_hal.elf  "stm32_hal.hex"
+   text	   data	    bss	    dec	    hex	filename
+  20212	    484	   1660	  22356	   5754	stm32_hal.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32_hal.hex
+ 
+Finished building: stm32_hal.list
+ 
