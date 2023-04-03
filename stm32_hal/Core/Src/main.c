@@ -17,7 +17,10 @@
 #include "uart.h"
 #include "gpio.h"
 #include "tm1637.h"
+#include "exti.h"
 //-----------------------------------------------------------------------//
+
+bool pb_intertupt_flag = false;
 
 //-----------------------------------------------------------------------//
 // main function                                                         //
@@ -34,33 +37,37 @@ int main()
 
   // led
   gpio_LED_config();
-//  gpio_LED_write_green(true);
-//  gpio_LED_write_red(true);
-//  HAL_Delay(2000);
+
   // pb
   gpio_PB_config();
 
   //sw
   gpio_SW_config();
 
-  // tm1637 display
-  gpio_tm1637_config();
-  tm1637_init(GPIOB, GPIO_PIN_10, GPIO_PIN_11);
+  // interrupt
+  exti_pb_config();
 
-  tm1637_setCounter(1);
-  HAL_Delay(2000);
-  tm1637_setCounter(12);
-  HAL_Delay(2000);
-  tm1637_setCounter(123);
-  HAL_Delay(2000);
-  tm1637_setCounter(1234);
-  HAL_Delay(2000);
 
-  tm1637_setClock(1, 20);
+
   while (1)
   {
-
+	  if(pb_intertupt_flag)
+	  {
+		  pb_intertupt_flag = false;
+		  gpio_LED_toggle_green();
+		  HAL_Delay(10);
+		  EXTI->IMR |= (1UL << 0);
+	  }
   }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	if(GPIO_Pin == GPIO_PIN_0)
+	{
+		pb_intertupt_flag = true;
+		EXTI->IMR &= ~(1UL << 0);
+	}
 }
 
 //-----------------------------------------------------------------------//

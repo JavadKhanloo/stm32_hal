@@ -18,6 +18,7 @@
 "./HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
 "./HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
 "./HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_usart.o"
+"./Peripherals/Src/exti.o"
 "./Peripherals/Src/gpio.o"
 "./Peripherals/Src/rcc.o"
 "./Peripherals/Src/uart.o"

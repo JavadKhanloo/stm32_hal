@@ -12,20 +12,35 @@
 //-----------------------------------------------------------------------//
 // header section                                                        //
 //-----------------------------------------------------------------------//
-#include "main.h"
-#include "stm32f1xx_it.h"
+#include "exti.h"
+
 //-----------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------//
 // function definition                                                   //
 //-----------------------------------------------------------------------//
-void SysTick_Handler(void)
+
+/*
+// @brief EXTI Configuration
+*/
+void exti_pb_config(void)
 {
-    HAL_IncTick();
+  	// user button PA0
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	GPIO_InitTypeDef gpio_init_struct = {0};
+	gpio_init_struct.Mode = GPIO_MODE_IT_RISING;
+	gpio_init_struct.Pin = GPIO_PIN_0;
+	gpio_init_struct.Pull = GPIO_NOPULL;
+	gpio_init_struct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOA, &gpio_init_struct);
+
+    HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 }
 
-void EXTI0_IRQHandler(void)
-{
-	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
-}
+
+
+
+
 //-----------------------------------------------------------------------//
