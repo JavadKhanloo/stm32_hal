@@ -1,0 +1,2 @@
+../Peripherals/Src/adc.c:29:6:adc_GPIO_config	32	static
+../Peripherals/Src/adc.c:45:6:adc_single_config	32	static

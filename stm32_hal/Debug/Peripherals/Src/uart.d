@@ -19,6 +19,8 @@ Peripherals/Src/uart.o: ../Peripherals/Src/uart.c \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
+ D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h \
+ D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
@@ -46,6 +48,8 @@ D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/I
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h:
+D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h:
+D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:

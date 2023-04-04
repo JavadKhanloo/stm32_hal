@@ -5,18 +5,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Peripherals/Src/adc.c \
 ../Peripherals/Src/exti.c \
 ../Peripherals/Src/gpio.c \
 ../Peripherals/Src/rcc.c \
 ../Peripherals/Src/uart.c 
 
 OBJS += \
+./Peripherals/Src/adc.o \
 ./Peripherals/Src/exti.o \
 ./Peripherals/Src/gpio.o \
 ./Peripherals/Src/rcc.o \
 ./Peripherals/Src/uart.o 
 
 C_DEPS += \
+./Peripherals/Src/adc.d \
 ./Peripherals/Src/exti.d \
 ./Peripherals/Src/gpio.d \
 ./Peripherals/Src/rcc.d \
@@ -30,7 +33,7 @@ Peripherals/Src/%.o Peripherals/Src/%.su: ../Peripherals/Src/%.c Peripherals/Src
 clean: clean-Peripherals-2f-Src
 
 clean-Peripherals-2f-Src:
-	-$(RM) ./Peripherals/Src/exti.d ./Peripherals/Src/exti.o ./Peripherals/Src/exti.su ./Peripherals/Src/gpio.d ./Peripherals/Src/gpio.o ./Peripherals/Src/gpio.su ./Peripherals/Src/rcc.d ./Peripherals/Src/rcc.o ./Peripherals/Src/rcc.su ./Peripherals/Src/uart.d ./Peripherals/Src/uart.o ./Peripherals/Src/uart.su
+	-$(RM) ./Peripherals/Src/adc.d ./Peripherals/Src/adc.o ./Peripherals/Src/adc.su ./Peripherals/Src/exti.d ./Peripherals/Src/exti.o ./Peripherals/Src/exti.su ./Peripherals/Src/gpio.d ./Peripherals/Src/gpio.o ./Peripherals/Src/gpio.su ./Peripherals/Src/rcc.d ./Peripherals/Src/rcc.o ./Peripherals/Src/rcc.su ./Peripherals/Src/uart.d ./Peripherals/Src/uart.o ./Peripherals/Src/uart.su
 
 .PHONY: clean-Peripherals-2f-Src
 
