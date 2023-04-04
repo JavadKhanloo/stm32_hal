@@ -1,2 +1,5 @@
-../Peripherals/Src/adc.c:29:6:adc_GPIO_config	32	static
-../Peripherals/Src/adc.c:45:6:adc_single_config	32	static
+../Peripherals/Src/adc.c:30:6:adc_GPIO_config	32	static
+../Peripherals/Src/adc.c:46:6:adc_single_config	32	static
+../Peripherals/Src/adc.c:80:6:adc_interrupt_config	8	static
+../Peripherals/Src/adc.c:91:6:adc_multi_channel_config	24	static
+../Peripherals/Src/adc.c:138:6:adc_dma_config	16	static

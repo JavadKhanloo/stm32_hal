@@ -39,7 +39,20 @@ void adc_GPIO_config(void);
  */
 bool adc_single_config(ADC_single_select_e channel);
 
+/*
+// @brief ADC Interrupt enable
+ */
+void adc_interrupt_config(void);
 
+/*
+// @brief ADC Multi-channel configuration
+*/
+bool adc_multi_channel_config(void);
+
+/*
+// @brief ADC DMA configuration
+*/
+void adc_dma_config(void);
 
 
 //-----------------------------------------------------------------------//

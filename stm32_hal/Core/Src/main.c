@@ -21,7 +21,9 @@
 #include "adc.h"
 //-----------------------------------------------------------------------//
 
-bool pb_intertupt_flag = false;
+bool adc_EoC_flag = false;
+uint16_t adc_value[3];
+
 
 //-----------------------------------------------------------------------//
 // main function                                                         //
@@ -47,20 +49,25 @@ int main()
 
   // ADC
   adc_GPIO_config();
-  adc_single_config(ADC_single_select_joystick_y);
-  uint16_t adc_value;
 
 
+
+  //ADC DMA
+  adc_multi_channel_config();
+  adc_dma_config();
+
+  HAL_ADC_Start_DMA(&adc_1_handle, (uint32_t *)adc_value, 3);
 
   while (1)
   {
-	  HAL_ADC_Start(&adc_1_handle);
-	  if(HAL_ADC_PollForConversion(&adc_1_handle, 10) == HAL_OK)
+
+	  if(adc_EoC_flag)
 	  {
-		  // read ADC value
-		  adc_value = HAL_ADC_GetValue(&adc_1_handle);
-		  printf("ADC value : %d\n", adc_value);
+		  adc_EoC_flag = false;
+		  printf("adc values:\r\n");
+		  printf("PA1 : %d\tPA2 : %d\tPA3 : %d\r\n", adc_value[0], adc_value[1], adc_value[2]);
 		  gpio_LED_toggle_green();
+		  HAL_ADC_Start_DMA(&adc_1_handle, (uint32_t *)adc_value, 3);
 	  }
 
 	  HAL_Delay(250);
@@ -68,6 +75,13 @@ int main()
   }
 }
 
+/*
+// @brief ADC Handler
+*/
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+{
+	adc_EoC_flag = true;
+}
 
 
 //-----------------------------------------------------------------------//
