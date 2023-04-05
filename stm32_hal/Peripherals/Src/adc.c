@@ -179,4 +179,27 @@ bool adc_AWDG_config(ADC_single_select_e channel)
 
 
 
+/*
+// @brief ADC Injected mode configuration
+*/
+bool adc_injected_config(ADC_single_select_e channel)
+{
+	ADC_InjectionConfTypeDef injected_config = {0};
+	injected_config.InjectedChannel = channel;
+	injected_config.InjectedRank = ADC_INJECTED_RANK_1;
+	injected_config.InjectedNbrOfConversion = 1;
+	injected_config.InjectedSamplingTime = ADC_SAMPLETIME_28CYCLES_5;
+	injected_config.ExternalTrigInjecConv = ADC_INJECTED_SOFTWARE_START;
+	injected_config.AutoInjectedConv = ENABLE;
+	injected_config.InjectedDiscontinuousConvMode = DISABLE;
+	injected_config.InjectedOffset = 0;
+	if(HAL_ADCEx_InjectedConfigChannel(&adc_1_handle, &injected_config) != HAL_OK)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+
 //-----------------------------------------------------------------------//

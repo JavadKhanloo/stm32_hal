@@ -60,6 +60,7 @@ int main()
 
   tim_TIM3_config(50);
   adc_AWDG_config(ADC_single_select_potentiometer);
+  adc_injected_config(ADC_single_select_potentiometer);
 
   HAL_ADC_Start_DMA(&adc_1_handle, (uint32_t *)adc_value, 3);
   HAL_TIM_Base_Start(&htim3);
@@ -78,9 +79,18 @@ int main()
 		  {
 			  adc_AWDG_flag = false;
 			  printf("ADC Watchdog threshold triggered\r\n");
-			  gpio_LED_toggle_red();
+		  }
+
+		  // ADC Injected
+		  HAL_ADCEx_InjectedStart(&adc_1_handle);
+		  if(HAL_ADCEx_InjectedPollForConversion(&adc_1_handle, 500) == HAL_OK)
+		  {
+			  uint32_t adc_injected_value = HAL_ADCEx_InjectedGetValue(&adc_1_handle, ADC_INJECTED_RANK_1);
+			  printf("ADC Injected Value : %d\r\n", (int)adc_injected_value);
 		  }
 	  }
+
+
 
 
 

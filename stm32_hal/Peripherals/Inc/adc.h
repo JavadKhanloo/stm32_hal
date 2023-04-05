@@ -61,7 +61,10 @@ void adc_dma_config(void);
 bool adc_AWDG_config(ADC_single_select_e channel);
 
 
-
+/*
+// @brief ADC Injected mode configuration
+*/
+bool adc_injected_config(ADC_single_select_e channel);
 
 //-----------------------------------------------------------------------//
 #endif
