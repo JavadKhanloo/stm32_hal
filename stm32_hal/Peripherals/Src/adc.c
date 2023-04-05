@@ -98,7 +98,7 @@ bool adc_multi_channel_config(void)
 	adc_1_handle.Init.ContinuousConvMode = DISABLE;
 	adc_1_handle.Init.NbrOfConversion = 3;
 	adc_1_handle.Init.DiscontinuousConvMode = DISABLE;
-	adc_1_handle.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+	adc_1_handle.Init.ExternalTrigConv = ADC_EXTERNALTRIGCONV_T3_TRGO;
 	if(HAL_ADC_Init(&adc_1_handle) != HAL_OK)
 	{
 		return false;
@@ -153,10 +153,29 @@ void adc_dma_config(void)
 	HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 5, 0);
 	HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
 
-
-
 }
 
+/*
+// @brief ADC AWDG configuration
+*/
+bool adc_AWDG_config(ADC_single_select_e channel)
+{
+	ADC_AnalogWDGConfTypeDef analog_WDG_config = {0};
+	analog_WDG_config.WatchdogMode = ADC_ANALOGWATCHDOG_SINGLE_REG;
+	analog_WDG_config.HighThreshold = 4000;
+	analog_WDG_config.LowThreshold = 1000;
+	analog_WDG_config.Channel = channel;
+	analog_WDG_config.ITMode = ENABLE;
+	if(HAL_ADC_AnalogWDGConfig(&adc_1_handle, &analog_WDG_config) != HAL_OK)
+	{
+		return false;
+	}
+	__HAL_ADC_ENABLE_IT(&adc_1_handle, ADC_IT_AWD);
+	HAL_NVIC_SetPriority(ADC1_2_IRQn, 5, 0);
+	HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
+
+	return true;
+}
 
 
 

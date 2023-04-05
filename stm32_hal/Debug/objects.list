@@ -24,5 +24,6 @@
 "./Peripherals/Src/exti.o"
 "./Peripherals/Src/gpio.o"
 "./Peripherals/Src/rcc.o"
+"./Peripherals/Src/tim.o"
 "./Peripherals/Src/uart.o"
 "./Startup/startup_stm32f103xb.o"

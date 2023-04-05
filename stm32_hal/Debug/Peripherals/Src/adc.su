@@ -3,3 +3,4 @@
 ../Peripherals/Src/adc.c:80:6:adc_interrupt_config	8	static
 ../Peripherals/Src/adc.c:91:6:adc_multi_channel_config	24	static
 ../Peripherals/Src/adc.c:138:6:adc_dma_config	16	static
+../Peripherals/Src/adc.c:161:6:adc_AWDG_config	40	static

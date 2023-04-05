@@ -1,4 +1,5 @@
-Core/Src/main.o: ../Core/Src/main.c \
+Peripherals/Src/tim.o: ../Peripherals/Src/tim.c \
+ D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/tim.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Core/Inc/main.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/stm32f1xx_hal_conf.h \
@@ -26,14 +27,8 @@ Core/Src/main.o: ../Core/Src/main.c \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/rcc.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/uart.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/gpio.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Application/Display/tm1637.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/exti.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/adc.h \
- D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/tim.h
+ D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h
+D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/tim.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Core/Inc/main.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/stm32f1xx_hal_conf.h:
@@ -62,10 +57,3 @@ D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/I
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h:
-D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/rcc.h:
-D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/uart.h:
-D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/gpio.h:
-D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Application/Display/tm1637.h:
-D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/exti.h:
-D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/adc.h:
-D:/Javad/Projects/STM32/stm32_hal/stm32_hal/stm32_hal/Peripherals/Inc/tim.h:
