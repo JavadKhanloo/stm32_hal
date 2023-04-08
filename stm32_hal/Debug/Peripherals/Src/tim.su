@@ -1,1 +1,3 @@
-../Peripherals/Src/tim.c:28:6:tim_TIM3_config	48	static
+../Peripherals/Src/tim.c:29:6:tim_TIM3_config	48	static
+../Peripherals/Src/tim.c:73:6:tim_TIM1_GPIO_config	32	static
+../Peripherals/Src/tim.c:89:6:tim_TIM1_OC_config	48	static

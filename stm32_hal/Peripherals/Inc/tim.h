@@ -18,6 +18,7 @@
 #include "main.h"
 
 extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim1;
 
 //-----------------------------------------------------------------------//
 // function definition                                                   //
@@ -28,6 +29,15 @@ extern TIM_HandleTypeDef htim3;
 */
 bool tim_TIM3_config(uint32_t ms_period);
 
+/*
+// @brief TIM1 Output GPIO
+*/
+void tim_TIM1_GPIO_config(void);
+
+/*
+// @brief TIM1 Output Compare Peripherals Configuration
+*/
+bool tim_TIM1_OC_config(uint32_t ms_period);
 //-----------------------------------------------------------------------//
 #endif
 //-----------------------------------------------------------------------//

@@ -15,6 +15,7 @@
 #include "main.h"
 #include "stm32f1xx_it.h"
 #include "adc.h"
+#include "tim.h"
 //-----------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------//
@@ -38,5 +39,10 @@ void ADC1_2_IRQHandler(void)
 void DMA1_Channel1_IRQHandler(void)
 {
 	HAL_DMA_IRQHandler(adc_1_handle.DMA_Handle);
+}
+
+void TIM3_IRQHandler(void)
+{
+	HAL_TIM_IRQHandler(&htim3);
 }
 //-----------------------------------------------------------------------//

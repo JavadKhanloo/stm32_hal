@@ -22,10 +22,6 @@
 #include "tim.h"
 //-----------------------------------------------------------------------//
 
-bool adc_EoC_flag = false;
-bool adc_AWDG_flag = false;
-uint16_t adc_value[3];
-
 
 //-----------------------------------------------------------------------//
 // main function                                                         //
@@ -49,68 +45,26 @@ int main()
   //sw
   gpio_SW_config();
 
-  // ADC
-  adc_GPIO_config();
+  // tim_oc
+  tim_TIM1_GPIO_config();
+  tim_TIM1_OC_config(500);
 
-
-
-  //ADC DMA
-  adc_multi_channel_config();
-  adc_dma_config();
-
-  tim_TIM3_config(50);
-  adc_AWDG_config(ADC_single_select_potentiometer);
-  adc_injected_config(ADC_single_select_potentiometer);
-
-  HAL_ADC_Start_DMA(&adc_1_handle, (uint32_t *)adc_value, 3);
-  HAL_TIM_Base_Start(&htim3);
+  // start channel 1 inverted
+  HAL_TIMEx_OCN_Start(&htim1, TIM_CHANNEL_1);
+  // start channel 1 inverted
+  HAL_TIMEx_OCN_Start(&htim1, TIM_CHANNEL_2);
 
   while (1)
   {
-
-	  if(adc_EoC_flag)
-	  {
-		  adc_EoC_flag = false;
-		  printf("adc values:\r\n");
-		  printf("PA1 : %d\tPA2 : %d\tPA3 : %d\r\n", adc_value[0], adc_value[1], adc_value[2]);
-		  gpio_LED_toggle_green();
-
-		  if(adc_AWDG_flag)
-		  {
-			  adc_AWDG_flag = false;
-			  printf("ADC Watchdog threshold triggered\r\n");
-		  }
-
-		  // ADC Injected
-		  HAL_ADCEx_InjectedStart(&adc_1_handle);
-		  if(HAL_ADCEx_InjectedPollForConversion(&adc_1_handle, 500) == HAL_OK)
-		  {
-			  uint32_t adc_injected_value = HAL_ADCEx_InjectedGetValue(&adc_1_handle, ADC_INJECTED_RANK_1);
-			  printf("ADC Injected Value : %d\r\n", (int)adc_injected_value);
-		  }
-	  }
-
-
-
-
 
   } // end of while loop
 } // end of main
 
 //-----------------------------------------------------------------------//
-/*
-// @brief ADC Handler
-*/
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	adc_EoC_flag = true;
-}
-
-void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc)
-{
-	if(hadc->Instance == ADC1)
+	if(htim->Instance == TIM3)
 	{
-		adc_AWDG_flag = true;
+		gpio_LED_toggle_red();
 	}
 }
-
