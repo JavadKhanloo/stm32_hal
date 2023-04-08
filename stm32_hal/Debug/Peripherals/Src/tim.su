@@ -1,3 +1,9 @@
 ../Peripherals/Src/tim.c:29:6:tim_TIM3_config	48	static
 ../Peripherals/Src/tim.c:73:6:tim_TIM1_GPIO_config	32	static
 ../Peripherals/Src/tim.c:89:6:tim_TIM1_OC_config	48	static
+../Peripherals/Src/tim.c:133:6:tim_TIM3_PWM_GPIO_config	40	static
+../Peripherals/Src/tim.c:154:6:tim_TIM3_PWM_config	56	static
+../Peripherals/Src/tim.c:206:6:tim_PWM_set_duty_cycle_1	32	static
+../Peripherals/Src/tim.c:212:6:tim_PWM_set_duty_cycle_2	32	static
+../Peripherals/Src/tim.c:218:6:tim_PWM_set_duty_cycle_3	32	static
+../Peripherals/Src/tim.c:228:6:tim_PWM_set_RGB	16	static

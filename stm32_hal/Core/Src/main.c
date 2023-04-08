@@ -46,13 +46,28 @@ int main()
   gpio_SW_config();
 
   // tim_oc
-  tim_TIM1_GPIO_config();
-  tim_TIM1_OC_config(500);
+  tim_TIM3_PWM_GPIO_config();
+  tim_TIM3_PWM_config();
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
 
-  // start channel 1 inverted
-  HAL_TIMEx_OCN_Start(&htim1, TIM_CHANNEL_1);
-  // start channel 1 inverted
-  HAL_TIMEx_OCN_Start(&htim1, TIM_CHANNEL_2);
+  // red
+  tim_PWM_set_RGB(255, 0, 0);
+  HAL_Delay(1000);
+  // green
+  tim_PWM_set_RGB(0, 255, 0);
+  HAL_Delay(1000);
+  // blue
+  tim_PWM_set_RGB(0, 0, 255);
+  HAL_Delay(1000);
+  // cyan
+  tim_PWM_set_RGB(0, 255, 255);
+  HAL_Delay(1000);
+  // magenta
+  tim_PWM_set_RGB(255, 0, 255);
+  HAL_Delay(1000);
+
 
   while (1)
   {
@@ -61,10 +76,4 @@ int main()
 } // end of main
 
 //-----------------------------------------------------------------------//
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-	if(htim->Instance == TIM3)
-	{
-		gpio_LED_toggle_red();
-	}
-}
+
